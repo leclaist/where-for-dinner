@@ -1,0 +1,37 @@
+id: 74d88381-9197-49f8-a2ef-bfbb6bf9eab9
+timestamp: 2023-08-10T20:27:40Z
+username: guest
+source: TAP-GUI
+accelerator:
+  name: where-for-dinner
+  source:
+    image: us-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:49c55504f27f5ce3d411a8ad572349ee11be98395e15ed750017bc88c942a943
+fragments:
+  - name: tap-workload
+    source:
+      image: us-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:d9c7d8d322f0740666ba7c752a9174d1eb66274338c4f0e211edb1d448104c2a
+  - name: build-wrapper-maven
+    source:
+      image: us-docker.pkg.dev/tap-sandbox-dev/tap-bits/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+options:
+  cacheName: cache-where-for-dinner
+  cacheType: redisCache
+  dbName: db-where-for-dinner
+  dbType: mysql
+  dynamicCache: true
+  dynamicCacheClass: redis-unmanaged
+  dynamicDBClass: mysql-unmanaged
+  dynamicDatabase: true
+  dynamicMsgBroker: true
+  dynamicMsgBrokerClass: rabbitmq-unmanaged
+  enableCloudEvents: false
+  enableSecurity: false
+  gatewayType: ossscg
+  includeBuildToolWrapper: true
+  msgBrokerType: rabbitmq
+  msgbrokerName: msgbroker-where-for-dinner
+  numRabbitMQClusterNodes: 1
+  ployglotWorkloads: false
+  projectName: where-for-dinner-koala
+  serviceNamespace: service-instances
+  workloadNamespace: workloads
