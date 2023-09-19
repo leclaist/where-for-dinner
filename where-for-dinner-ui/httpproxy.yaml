@@ -7,5 +7,5 @@ spec:
     fqdn: where-for-dinner.perfect300rock.com
   routes:
     - services:
-      - name: where-for-dinner-api-gateway
+      - name: wfd-api-gateway
         port: 80
